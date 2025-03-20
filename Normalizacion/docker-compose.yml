@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres_peajes:
+    image: postgres:latest
+    container_name: postgres_peajes
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: peajes_db
+    ports:
+      - "5433:5432" 
+    volumes:
+      - peajes_data:/var/lib/postgresql/data
+
+volumes:
+  peajes_data:
